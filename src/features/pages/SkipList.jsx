@@ -5,11 +5,13 @@ const SkipList = () => {
   const skips = fetchSkips();
 
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skips.map(skip => (
-        <SkipCard key={skip.id} skip={skip} />
+    <div className="container mx-auto p-4">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 ">
+      {skips.map((skip, index) => (
+        <SkipCard key={index} skip={skip} />
       ))}
     </div>
+  </div>
   );
 };
 

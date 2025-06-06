@@ -1,1 +1,10 @@
 @tailwind utilities;
+.bg-brand {
+  background-color: #262442;
+}
+.bg-brand-light {
+  background-color: #ADD8E61A;
+}
+.text-brand {
+  color: #D1D5DB;
+}
