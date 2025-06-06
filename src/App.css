@@ -8,3 +8,27 @@
 .text-brand {
   color: #D1D5DB;
 }
+.button{
+ background-color: #262442;
+ flex: 1;
+ flex-direction: row;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  padding:5px;
+  color: #D1D5DB;
+  border: 1px solid  #262442;
+}
+.text-brand-color{
+  color: #D4A017;
+}
+.circle{
+  background-color: #ADD8E61A;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+ justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #D1D5DB;
+}

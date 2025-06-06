@@ -1,24 +1,33 @@
 import Card from "../../commons/Card";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const SkipCard = ({ skip }) => (
   <Card>
-    {/* <h2 className="text-lg font-semibold">Size: {skip.size} Yard</h2> */}
-    <img
-    src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${skip.size}-yarder-skip.jpg`}
-    alt={`Skip Size ${skip.size}`}
-    className="w-full h-48 object-cover rounded pb-6 sm:pb-6 md:pb-6 lg:pb-6 xl:pb-6"
-    />
-    <p className="text-brand">Hire Period: {skip.hire_period_days} days</p>
-    <p className="text-brand">Total Price: £{skip.getTotalPrice().toFixed(2)}</p>
-    <p className="text-brand">On Road: {skip.allowed_on_road ? "Yes" : "No"}</p>
-    <p className="text-brand">Heavy Waste: {skip.allows_heavy_waste ? "Yes" : "No"}</p>
+    <div className="relative">
+      <div className="absolute top-2 right-2 bg-brand text-brand-color text-xs font-semibold rounded px-2 py-1 z-10 shadow">
+        {skip.size} Yard Skip
+      </div>
+      <img
+        src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${skip.size}-yarder-skip.jpg`}
+        alt={`Skip Size ${skip.size}`}
+        className="w-full h-48 object-cover rounded"
+      />
+    </div>
+    <div className="px-2 mt-4">
+      <p className="text-brand text-xl font-bold font-heading">
+        {skip.hire_period_days} hire period
+      </p>
+      <p className="text-brand text-sm font-semibold font-heading">
+        £{skip.getTotalPrice().toFixed(2)}
+      </p>
+    </div>
+    <div className="mt-3 flex justify-center">
+      <button className="flex items-center gap-2 bg-brand text-brand-color px-4 py-2  rounded hover:bg-brand-dark transition">
+       <div className="circle"><ArrowRightIcon className="w-4 h-4 text-brand-color" /></div>
+        <span>Rent This Skip</span>
+      </button>
+    </div>
   </Card>
 );
 
 export default SkipCard;
-// const SkipCard = ({ skip }) => (
-//   <div className="border border-red-500 bg-yellow-100 p-4">
-//     <p>{skip.size} Yard Skip</p>
-//   </div>
-// );
-// export default SkipCard;
