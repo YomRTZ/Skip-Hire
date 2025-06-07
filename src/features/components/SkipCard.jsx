@@ -25,17 +25,17 @@ function SkipCard({ skip }) {
           <p className="text-brand text-xl font-bold font-heading">
             {skip.hire_period_days} hire period
           </p>
-          <p className="text-brand text-sm font-semibold font-heading">
+          <p className="text-brand-color text-sm font-semibold font-heading">
             £{skip.getTotalPrice().toFixed(2)}
           </p>
         </div>
         <div>
           <p
-           className="text-green-600">
+           className="text-brand text-sm font-semibold font-heading">
             {roadStatus}
           </p>
           <p
-            className="text-green-600">
+            className="text-brand text-sm font-semibold font-heading">
             {heavyWasteStatus}
           </p>
         </div>
