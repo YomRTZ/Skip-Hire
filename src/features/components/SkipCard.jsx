@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Card from "../../commons/Card";
 import { ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
 function SkipCard({ skip }) {
+  const {
+    roadStatus = "",
+    heavyWasteStatus = "",
+    isAllowed = false,
+  } = skip.isAllowed?.() || {};
   const [selected, setSelected] = useState(false);
   return (
     <Card className="hover:shadow-lg  hover:border-2 hover:scale-[1.02] rounded transition duration-200 ease-in-out hover:border-amber-400">
@@ -15,13 +20,25 @@ function SkipCard({ skip }) {
           className="w-full h-48 object-cover rounded"
         />
       </div>
-      <div className="px-2 mt-4">
-        <p className="text-brand text-xl font-bold font-heading">
-          {skip.hire_period_days} hire period
-        </p>
-        <p className="text-brand text-sm font-semibold font-heading">
-          £{skip.getTotalPrice().toFixed(2)}
-        </p>
+      <div className="px-2 mt-2 flex flex-col-2 justify-between">
+        <div>
+          <p className="text-brand text-xl font-bold font-heading">
+            {skip.hire_period_days} hire period
+          </p>
+          <p className="text-brand text-sm font-semibold font-heading">
+            £{skip.getTotalPrice().toFixed(2)}
+          </p>
+        </div>
+        <div>
+          <p
+           className="text-green-600">
+            {roadStatus}
+          </p>
+          <p
+            className="text-green-600">
+            {heavyWasteStatus}
+          </p>
+        </div>
       </div>
       <div className="mt-3 flex justify-center">
         <button

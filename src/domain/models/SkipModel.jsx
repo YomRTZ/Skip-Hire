@@ -8,7 +8,14 @@ export class SkipModel {
   }
 
   isAllowed() {
-    return this.allowed_on_road && this.allows_heavy_waste;
-  }
+  const roadStatus = this.allowed_on_road ? "Allowed on road" : "Not allowed on road";
+  const heavyWasteStatus = this.allows_heavy_waste ? "Heavy waste allowed" : "Not for heavy waste";
+
+  return {
+    roadStatus,
+    heavyWasteStatus,
+    isAllowed: this.allowed_on_road && this.allows_heavy_waste,
+  };
+}
 }
     
