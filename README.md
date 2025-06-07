@@ -37,10 +37,12 @@ The project is divided into key directories to keep everything organized and man
 - **assets/** -- Static assets like images  
 - **context/ModalContex.jsx** — React Context providers for global state - **context/ModalContex.jsx** for global modal provider   
 - **data/** -- Mock or static data sources - **data/skipHireJsonData.jsx** json skip hire data
-- **domain/** -- This folder holds the core business logic of the application, following a **separation of concerns** approach. This means different parts of the code have specific roles, making it easier to update or expand the app. It includes: - **domain/modals/SkipModel.jsx** -- This file defines how skip hire data (like size, price, and rules) is structured and processed. It creates a blueprint for each skip, ensuring all details are handled consistently and ready for use in the app. and **domain/services/skipService.jsx** -- This file manages the business rules for working with skip data. It pulls information from a data source, organizes it using the `SkipModel`, and prepares it for display, acting as a key link between the data and the user interface. 
-- **features/** — Feature-based UI components and pages  
-- **commons/** — Generic reusable components for appling reusablity for card, HamburgerMenu and Modal 
-- **routes/** — Application routing setup  
+- **domain/** -- This folder holds the core business logic of the application, following a **separation of concerns** approach. This means different parts of the code have specific roles, making it easier to update or expand the app. It includes:
+    - **domain/modals/SkipModel.jsx** -- This file defines how skip hire data (like size, price, and rules) is structured and processed. It creates a blueprint for each skip, ensuring all details are handled consistently and ready for use in the app.
+    - **domain/services/skipService.jsx** -- This file manages the business rules for working with skip data. It pulls information from a data source, organizes it using the `SkipModel`, and prepares it for display, acting as a key link between the data and the user interface. 
+- **features/** -- Feature-based UI components and pages  
+- **commons/** -- Generic reusable components for appling reusablity for card, HamburgerMenu and Modal 
+- **routes/** -- Application routing setup  
 ---
 ## How It Works
 
