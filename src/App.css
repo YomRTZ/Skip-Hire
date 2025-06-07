@@ -32,3 +32,21 @@
   display: flex;
   color: #D1D5DB;
 }
+@layer utilities {
+  @media (max-width: 639px) {
+    .hidden-below-640 {
+      display: none;
+    }
+    .flex-below-640 {
+      display: flex;
+    }
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    .hidden-641-to-768 {
+      display: none;
+    }
+    .flex-641-to-768 {
+      display: flex;
+    }
+  }
+}
