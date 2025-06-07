@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import Card from "../../commons/Card";
 import { ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
+import { useModal } from "../../context/ModalContext";
 function SkipCard({ skip }) {
-  const {
-    roadStatus = "",
-    heavyWasteStatus = "",
-    isAllowed = false,
-  } = skip.isAllowed?.() || {};
+  const { roadStatus = "", heavyWasteStatus = "" } = skip.isAllowed?.() || {};
   const [selected, setSelected] = useState(false);
+  const { openModal } = useModal();
+  const handleSelect = () => {
+    setSelected(!selected);
+    openModal({
+      title: `${skip.size} Yard Skip Selected`,
+      message: `
+        Hire period: ${skip.hire_period_days} days\n
+        Price: £${skip.getTotalPrice().toFixed(2)}\n
+        Road status: ${roadStatus}\n
+        Heavy waste: ${heavyWasteStatus}\n
+        postcode: ${skip.postcode}\n
+        transport_cost: ${skip.transport_cost ? `£${skip.transport_cost.toFixed(2)}` : "Unspecified"}\n
+        per_tonne_cost:  ${skip.per_tonne_cost ? `£${skip.per_tonne_cost.toFixed(2)}` : "Unspecified"}\n
+      `,
+    });
+  };
   return (
     <Card className="hover:shadow-lg  hover:border-2 hover:scale-[1.02] rounded transition duration-200 ease-in-out hover:border-amber-400">
       <div className="relative">
@@ -25,17 +38,15 @@ function SkipCard({ skip }) {
           <p className="text-brand text-xl font-bold font-heading">
             {skip.hire_period_days} hire period
           </p>
-          <p className="text-brand-color text-sm font-semibold font-heading">
+          <p className="text-brand-color text-sm font-semibold font-heading ">
             £{skip.getTotalPrice().toFixed(2)}
           </p>
         </div>
         <div>
-          <p
-           className="text-brand text-sm font-semibold font-heading">
+          <p className="text-brand text-sm font-semibold font-heading">
             {roadStatus}
           </p>
-          <p
-            className="text-brand text-sm font-semibold font-heading">
+          <p className="text-brand text-sm font-semibold font-heading">
             {heavyWasteStatus}
           </p>
         </div>
@@ -48,7 +59,7 @@ function SkipCard({ skip }) {
         ? "bg-brand-color text-brand"
         : "bg-brand text-brand-color hover:bg-brand-dark"
     }`}
-          onClick={() => setSelected(!selected)}
+          onClick={handleSelect}
         >
           <div className="circle">
             {selected ? (

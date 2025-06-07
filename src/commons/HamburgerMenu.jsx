@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
 import {
   MapPinIcon,
   TrashIcon,
@@ -66,13 +65,13 @@ const HamburgerMenu = () => {
 
       {/* Mobile dropdown */}
       {isOpen && (
-        <div className="absolute top-14 right-4 bg-white rounded-md shadow-lg p-4 z-50 space-y-2 md:hidden">
+        <div className=" absolute top-14 right-4 bg-brand rounded-md shadow-lg p-4 px-12 z-50 space-y-2 md:hidden">
           {navLinks.map(({ to, label, icon }) => (
             <Link
               key={to}
               to={to}
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2 py-2 text-brand hover:text-brand-dark"
+              className="flex items-center gap-2 py-2 text-brand px-10 bg-brand-light rounded-md transition-colors duration-200 hover:text-brand-color "
             >
               {icon}
               {label}
@@ -82,12 +81,12 @@ const HamburgerMenu = () => {
       )}
 
       {/* Desktop menu */}
-      <div className=" hidden-below-640 hidden-641-to-768 md:flex md:flex-row sm:gap-4 md:mt-4 sm:w-full md:justify-between">
+      <div className=" hidden-below-640 hidden-641-to-768  md:flex md:flex-row sm:gap-2 sm:w-full md:justify-between xl:gap-4 lg:gap-4 xl:justify-end 2xl:gap-8">
         {navLinks.map(({ to, label, icon }) => (
           <Link
             key={to}
             to={to}
-            className="hidden-below-640 md:flex  items-center gap-2 text-brand hover:text-brand-color whitespace-nowrap"
+            className="hidden-below-640 md:flex  items-center gap-1 text-brand lg:px-2 whitespace-nowrap bg-brand-light rounded-md p-2 pl-0 xl:px-4 2xl:px-5 transition-colors duration-200 hover:text-brand-color"
           >
             {icon}
             {label}

@@ -4,9 +4,6 @@ import AppRoutes from './routes/AppRoutes';
 function App() {
   return (
     <div className='bg-brand'>
-      {/* <header className="">
-        Skip Hire Prices
-      </header> */}
       <AppRoutes />
     </div>
   );

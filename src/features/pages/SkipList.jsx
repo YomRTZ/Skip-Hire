@@ -16,16 +16,16 @@ const SkipList = () => {
           />
 
           <div className="absolute inset-0 flex flex-col items-start justify-center px-6 mt-[25%] ml-5 text-brand-color">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
+            <h2 className=" text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
               Choose Your Skip Size
             </h2>
-            <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-1">
+            <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-0.5">
               Select the skip size that best suits your needs
             </span>
           </div>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
+      <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
         {skips.map((skip, index) => (
           <SkipCard key={index} skip={skip} />
         ))}

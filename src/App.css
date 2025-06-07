@@ -22,6 +22,9 @@
 .text-brand-color{
   color: #D4A017;
 }
+.bg-transparent{
+  background-color: #00000099;
+}
 .circle{
   background-color: #ADD8E61A;
   border-radius: 30px;
@@ -37,6 +40,7 @@
     .hidden-below-640 {
       display: none;
     }
+ 
     .flex-below-640 {
       display: flex;
     }
