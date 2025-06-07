@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../../App.css'
 function ChooseDatePage() {
   return (
-    <div>ChooseDatePage</div>
+    <div className='h-lvh text-2xl text-brand'>Welcome To ChooseDate Page</div>
   )
 }
 

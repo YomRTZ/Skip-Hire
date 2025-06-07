@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../../App.css'
 function PermitCheckPage() {
   return (
-    <div>PermitCheckPage</div>
+    <div className='text-2xl text-brand h-lvh'>Welcome To PermitCheck Page</div>
   )
 }
 

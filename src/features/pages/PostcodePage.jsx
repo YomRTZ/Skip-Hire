@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../../App.css'
 function PostcodePage() {
   return (
-    <div>PostcodePage</div>
+    <div className='text-2xl text-brand h-lvh'>Welcome To Postcode Page</div>
   )
 }
 

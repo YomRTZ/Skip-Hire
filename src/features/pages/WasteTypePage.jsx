@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../../App.css'
 function WasteTypePage() {
   return (
-    <div>WasteTypePage</div>
+    <div className='text-2xl text-brand h-lvh'>Welcome To WasteType Page</div>
   )
 }
 
